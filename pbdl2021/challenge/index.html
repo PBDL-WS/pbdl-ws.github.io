@@ -139,7 +139,7 @@
                         
                         <div class="row" style="margin-bottom:1.5rem">
                             <div class="col-lg-12 col-md-12">
-                                <p class="text-center font-italic" style="line-height:1.2rem; margin-top: 0.4rem "><b>Fig.1. </b>An example of the Hyperspectral City 1.0 Dataset,<br/>we provide high resolution hyperspectral data in typical driving scenes with coarse semantic label.</p>
+                                <p class="text-center font-italic" style="line-height:1.2rem; margin-top: 0.4rem "><b>Fig.1. </b>An example of the Hyperspectral City 2.0 Dataset,<br/>we provide high resolution hyperspectral data in typical driving scenes with coarse semantic label.</p>
                             </div>
                         </div>
                         
@@ -165,15 +165,19 @@
                         <p style="font-size:16px;">
 							Light traveling in the 3D world interacts with the scene through intricate processes before being captured by a camera. These processes result in the dazzling effects like color and shading, complex surface and material appearance, different weathering, just to name a few. Physics based vision aims to invert the processes to recover the scene properties, such as shape, reflectance, light distribution, medium properties, etc., from the images by modeling and analysing the imaging process to extract desired features or information.
 						</p>
+						
                         <p style="font-size:16px;">
 							There are many popular topics in physics based vision. Some examples are shape from shading, photometric stereo, reflectance modelling, reflection separation, radiometric calibration, intrinsic image decomposition, and so on. As a series of classic and fundamental problems in computer vision, physics based vision facilitates high-level computer vision problems from various aspects. For example, the estimated surface normal is a useful cue for 3D scene understanding; the specular-free image could significantly increase the accuracy of image recognition problem; the intrinsic images reflecting inherent properties of the objects in the scene substantially benefit other computer vision algorithms, such as segmentation, recognition; reflectance analysis serves as the fundamental support for material classification; and, bad weather visibility enhancement is important for outdoor vision systems.
 						</p>
+
                         <p style="font-size:16px;">
 							In recent years, deep neural networks and learning techniques show promising improvement for various high-level vision tasks, such as detection, classification, tracking, etc. With the physics imaging formation model involved, successful examples can also be found in various physics based vision problems (please refer to the references section).
 						</p>
+
                         <p style="font-size:16px;">
 							When physics based vision meets deep learning, there will be mutual benefits. On one hand, classic physics based vision tasks can be implemented in a data-fashion way to handle complex scenes. This is because, a physically more accurate optical model can be too complex as an inverse problem for computer vision algorithms (usually too many unknown parameters in one model), however, it can be well approximated providing a sufficient collection of data. Later, the intrinsic physical properties are likely to be learned through a deep neural network model. Existing research has already exploited such benefit on luminance transfer, computational stereo, haze removal, etc.
 						</p>
+
                         <p style="font-size:16px;">
 							On the other hand, high-level vision task can also be benefited by awareness of the physics principles. For instance, physics principles can be utilized to supervise the learning process, by explicitly extracting the low-level physical principles rather than learning it implicitly. In this way, the network could be more accurate more efficient. Such physics principles have already presented the benefits in semantic segmentation, object detection, etc. Therefore, we believe when physics based vision meets deep learning both low level and high level vision task can get the benefits. Furthermore, we believe that there are many computer vision tasks that can be tackled by solving both physics based vision and high level vision in a joint fashion to get more robust and accurate results which cannot be achieved by ignoring each side.
 						</p>
