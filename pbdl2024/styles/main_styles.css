@@ -511,6 +511,7 @@ section
 	color: #FFFFFF;
 	margin-top: -5px;
 	line-height: 1.2;
+	font-variant-numeric: lining-nums;
 }
 .home_location
 {
@@ -518,6 +519,7 @@ section
 	font-weight: 500;
 	color: #FFFFFF;
 	margin-top: -13px;
+	font-variant-numeric: lining-nums;
 }
 .home_text
 {
@@ -526,6 +528,7 @@ section
 	color: #FFFFFF;
 	line-height: 2.14;
 	margin-top: 4px;
+	font-variant-numeric: lining-nums;
 }
 .home_buttons
 {
