@@ -425,3 +425,23 @@
 {
 	
 }
+
+.organizer {
+    display: flex;
+    align-items: flex-end; /* 更改为 flex-end 以确保整体内容在垂直方向上底部对齐 */
+}
+
+.left {
+    margin-right: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content p {
+    font-size: 16px;
+    align-self: flex-start; /* 调整文字在垂直方向上的对齐方式为 flex-start */
+}
+
