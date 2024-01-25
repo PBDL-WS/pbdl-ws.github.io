@@ -890,6 +890,7 @@ section
 	font-weight: 500;
 	color: #4c4c4c;
 	z-index: 1;
+	font-variant-numeric: lining-nums;
 }
 .intro_item:hover .intro_title a,
 .intro_item:hover .intro_subtitle
