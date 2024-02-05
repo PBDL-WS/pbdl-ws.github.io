@@ -111,11 +111,11 @@
 
 						<ul class="nav nav-pills flex-column new_challenge">
 							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.html">Challenge Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset Introduction</a></li>
-							<li class="nav-item"><a class="nav-link active" href="download.html">Dataset Download</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link active" href="download.html">Download</a></li>
 							<li class="nav-item"><a class="nav-link" href="evaluation.html">Evaluation</a></li>
-							<li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
 							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
 						</ul>
 
@@ -125,11 +125,10 @@
 						<p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Access the Challenge Dataset</b></p>
 
 						<!--<p style="font-size:16px;color:red">The challenge is closed.</p>-->
-						<p style="font-size:16px;">Challenge Dataset can be downloaded from here: &nbsp <a href="https://isis-data.science.uva.nl/cv/HyperspectralCityV2.0/" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Training and Testing Set</a></p>
-						
+						<p style="font-size:16px;"><a href="https://pan.baidu.com/s/1zQAgS1zb9HnHd0TC6cIfww" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Train Images: &nbsp</a>Access Code:4bwq</p>
+						<p style="font-size:16px;"><a href="https://pan.baidu.com/s/1OaO1yXMDkcrQdVAtBCznow" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Train annotation: &nbsp</a>Access Code:mbsf</p>
+						<p style="font-size:16px;"><a href="https://pan.baidu.com/s/1ID1MrMC0tAQ4_I8DFFZ0sg" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Valimages: &nbsp</a>Access Code:3kwn</p>
 
-						
-						
 						<p style="font-size:16px;color:red">
 							The Dataset is for this chanllenge and research purpose only. Commercial use is not permitted.
 						</p>
@@ -170,9 +169,28 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							In the dataset, you may find a folder for training data and a folder for testing data.
+							LIS dataset should follow folder structure bellow, it use the same type of annotation with COCO: 
 						</p>
-                        <p style="font-size:16px;">
+						<p style="font-size:16px;">
+							├── LIS
+						</p>
+						<p style="font-size:16px;">
+							│   ├── RAW-dark
+						</p>
+						<p style="font-size:16px;">
+							│   │   ├── lis_xxxxxx.png
+						</p>
+						<p style="font-size:16px;">
+							│   ├── annotations
+						</p>
+						<p style="font-size:16px;">
+							│   │   ├──lis_coco_png_raw_dark_trainonly_challenge.json 
+						</p>
+						<p style="font-size:16px;">
+							│   │   ├──…
+						</p>
+
+                        <!-- <p style="font-size:16px;">
 							<b class="font-italic">
 								Train 
 							</b>
@@ -222,7 +240,7 @@
 							</b>
 							<br/>
 							In the dataset package, you will find a MATLAB file named readHSD.m, which is the MATLAB code to read the hyperspectral data. The data format is similar as RGB images, the different is the file has 128 channels rather than 3 channels.
-						</p>
+						</p> -->
 
 
 					</div>

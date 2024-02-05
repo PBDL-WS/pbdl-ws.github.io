@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Challenge</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Conference project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../styles/bootstrap4/bootstrap.min.css">
+<link href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="../styles/speakers.css">
+<link rel="stylesheet" type="text/css" href="../styles/speakers_responsive.css">
+<link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
+
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Menu -->
+    
+	<div class="menu trans_500">
+		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+			<div class="menu_close_container"><div class="menu_close"></div></div>
+			<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			<ul>
+				<li class="menu_item"><a href="../index.html">Home</a></li>
+				<li class="menu_item"><a href="../organizers.html">Organizers</a></li>
+				<li class="menu_item"><a href="../speakers.html">Speakers</a></li>
+				<li class="menu_item"><a href="../callforpapers.html">Call for papers</a></li>
+				<li class="menu_item"><a href="../challenge/index.html">Challenges</a></li>
+				<li class="menu_item"><a href="../program.html">Program</a></li>
+			</ul>
+		</div>
+	</div>
+    
+	<!-- Home -->
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="background.jpg" data-speed="0.8"></div>
+
+		<!-- Header -->
+
+		<header class="header" id="header">
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul>
+													<li><a href="../index.html">Home</a></li>
+													<li><a href="../organizers.html">Organizers</a></li>
+													<li><a href="../speakers.html">Speakers</a></li>
+													<li><a href="../callforpapers.html">Call for papers</a></li>
+													<li class="active"><a href="../challenge/index.html">Challenges</a></li>
+													<li><a href="../program.html">Program</a></li>
+													
+												</ul>
+											</nav>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>	
+			</div>
+		</header>
+		
+		<div class="home_content_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_date">The challenge on</div>
+							<div class="home_title">
+								<font color="red">H</font>DR <font color="red">R</font>econstruction from a <font
+									color="red">S</font>ingle <font color="red">R</font>aw <font color="red">I</font>mage
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+</div>
+
+	<!-- Speakers -->
+
+	 <div id="site_content">
+      
+
+	  <div><!--new body-->
+        <div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-4"><!--小导航部分-->
+
+						
+
+						<ul class="nav nav-pills flex-column new_challenge">
+							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+							<li class="nav-item"><a class="nav-link active" href="evaluation.html">Evaluation</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
+							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
+						</ul>
+
+					</div>
+					<div class="col-lg-10 col-md-8"><!--内容部分-->
+
+						<p style="font-size:16px;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Evaluation Metric
+							</b>
+						</p>
+                        <p style="font-size:16px;">
+							In the challenge, we use mean Intersection over Union as the evaluation metric.
+						</p>
+                        <p style="font-size:16px;">
+						</p>
+                        <p style="font-size:16px;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Format of Submission
+							</b>
+						</p>
+                        <p style="font-size:16px;">
+							To submit your result, you are required to submit a .zip file. You may pickup any name for the zip file.
+						</p>
+                        <p style="font-size:16px;">
+							<b class="font-italic">
+								Format of Filenames 
+							</b>
+							<br/>
+							Within the zip file, you are required to name each of the segmentation result using the same name as the HSI name. For example, the segmentation result for HSI named:
+						</p>
+                        <p style="font-size:16px;" class="text-center">
+							20210409 140341 03.hsd
+						</p>
+                        <p style="font-size:16px;">
+							should be
+						</p>
+                        <p style="font-size:16px;" class="text-center">
+							&lt rgb20210409 140341 03.png >
+						</rgb20190528>
+						</p>
+                        <p style="font-size:16px;">
+							All the png files should be under the same folder, there should be no subfolders in your submission.
+						</p>
+                        <p style="font-size:16px;">
+							<b class="font-italic">
+								Format of Images
+							</b>
+							<br/>
+							You are required to submit you segmentation result using the specified code of color. The segmentation result should be stored as png image. Specifically, 8-bit, single channel, L mode png format. The color code should be the same as provided in Fig. 2.3.
+						</p>
+
+                        <p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Submission</b></p>
+
+                        <p style="font-size:16px;color: red">The challenge has not yet started.</p>
+
+
+					</div>
+				</div>
+			</div>
+    </div><!--new body end-->
+    </div>
+</div>
+
+<!--<script src="../static/js/jquery-3.2.1.min.js"></script>-->
+<script src="../styles/bootstrap4/popper.js"></script>
+<script src="../styles/bootstrap4/bootstrap.min.js"></script>
+<script src="../plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="../plugins/easing/easing.js"></script>
+<script src="../plugins/parallax-js-master/parallax.min.js"></script>
+<script src="../js/speakers.js"></script>
+</body>
+</html>

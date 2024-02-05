@@ -112,11 +112,11 @@
 
 						<ul class="nav nav-pills flex-column new_challenge">
 							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.html">Challenge Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="download.html">Dataset Download</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
 							<li class="nav-item"><a class="nav-link active" href="evaluation.html">Evaluation</a></li>
-							<li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
 							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
 						</ul>
 
@@ -129,45 +129,66 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							In the challenge, we use mean Intersection over Union as the evaluation metric.
+							In the challenge, we use Average Precision <b style="font-family:arial;color:black;font-size:16px;">
+								(AP) 
+							</b> as the evaluation metric，which is same with the coco competition.
 						</p>
-                        <p style="font-size:16px;">
-						</p>
+						<table style="width:100%; border-spacing:2;font-size:16px;font-variant-numeric: lining-nums;" >
+						  <tbody><tr><th width="20%">Metric</th> <th width="80%">Description</th></tr>
+						  <tr><td colspan="2">&nbsp;&nbsp;<strong>Average Precision (AP):</strong></td></tr>
+						  <tr><td>&nbsp;&nbsp;AP</td><td>% AP at IoU=.50:.05:.95 (primary challenge metric)</td></tr>
+						  <tr><td>&nbsp;&nbsp;AP<sup>IoU=.50</sup></td><td>% AP at IoU=.50 (PASCAL VOC metric)</td></tr>
+						  <tr><td>&nbsp;&nbsp;AP<sup>IoU=.75</sup></td><td>% AP at IoU=.75 (strict metric)</td></tr>
+						  <tr><td colspan="2">&nbsp;&nbsp;<strong>AP Across Scales:</strong></td></tr>
+						  <tr><td>&nbsp;&nbsp;AP<sup>small</sup></td><td>% AP for small objects: area &lt; 32<sup>2</sup> </td></tr>
+						  <tr><td>&nbsp;&nbsp;AP<sup>medium</sup></td><td>% AP for medium objects: 32<sup>2</sup> &lt; area &lt; 96<sup>2</sup></td></tr>
+						  <tr><td>&nbsp;&nbsp;AP<sup>large</sup></td><td>% AP for large objects: area > 96<sup>2</sup></td></tr>
+						  <!-- <tr><td colspan="2">&nbsp;&nbsp;<strong>Break and Poster Session (10-20 papers): 10:30 – 11:00</strong></td></tr> -->
+						  <tr><td colspan="2">&nbsp;&nbsp;<strong>Average Recall (AR):</strong></td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>max=1</sup></td><td>% AR given 1 detection per image</td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>max=10</sup></td><td>% AR given 10 detections per image</td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>max=100</sup></td><td>% AR given 100 detections per image</td></tr>
+						  <tr><td colspan="2">&nbsp;&nbsp;<strong>AR Across Scales:</strong></td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>small</sup></td><td>% AR for small objects: area &lt; 32<sup>2</sup></td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>medium</sup></td><td>% AR for medium objects: 32<sup>2</sup> &lt; area &lt; 96<sup>2</sup></td></tr>
+						  <tr><td>&nbsp;&nbsp;AR<sup>large</sup></td><td>% AR for large objects: area > 96<sup>2</sup></td></tr>
+						</tbody></table>
+						<br>
                         <p style="font-size:16px;">
 							<b style="font-family:arial;color:black;font-size:16px;">
 								Format of Submission
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							To submit your result, you are required to submit a .zip file. You may pickup any name for the zip file.
+							To submit your result, you are required to submit a .json file. WE follow the format of <a href="https://cocodataset.org/#format-results">COCO</a>.
 						</p>
                         <p style="font-size:16px;">
 							<b class="font-italic">
 								Format of Filenames 
 							</b>
 							<br/>
-							Within the zip file, you are required to name each of the segmentation result using the same name as the HSI name. For example, the segmentation result for HSI named:
+							After processing the input images of the validation set, you should save the results as:
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							20210409 140341 03.hsd
+							lis_coco_png_raw_dark_valonly_challenge.json
 						</p>
                         <p style="font-size:16px;">
-							should be
+							After processing the input images of the testing set, you should save the results as:
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							&lt rgb20210409 140341 03.png >
+							lis_coco_png_raw_dark_testonly_challenge.json
 						</rgb20190528>
 						</p>
                         <p style="font-size:16px;">
-							All the png files should be under the same folder, there should be no subfolders in your submission.
+							You should directly save the JSON file corresponding to the results you want to submit in a folder. There should be no other folders within the path. Before submission, compress the folder into a zip file.
 						</p>
-                        <p style="font-size:16px;">
+                        <!-- <p style="font-size:16px;">
 							<b class="font-italic">
 								Format of Images
 							</b>
 							<br/>
 							You are required to submit you segmentation result using the specified code of color. The segmentation result should be stored as png image. Specifically, 8-bit, single channel, L mode png format. The color code should be the same as provided in Fig. 2.3.
-						</p>
+						</p> -->
 
                         <p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Submission</b></p>
 

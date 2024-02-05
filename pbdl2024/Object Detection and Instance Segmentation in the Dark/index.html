@@ -111,11 +111,11 @@
 
 						<ul class="nav nav-pills flex-column new_challenge">
 							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
-							<li class="nav-item"><a class="nav-link active" href="index.html">Challenge Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="download.html">Dataset Download</a></li>
+							<li class="nav-item"><a class="nav-link active" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
 							<li class="nav-item"><a class="nav-link" href="evaluation.html">Evaluation</a></li>
-							<li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
 							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
 						</ul>
 
@@ -124,7 +124,7 @@
 
 						<p style="font-size:16px;">
 							<b style="font-family:Times New Roman;color:black;font-size:30px;">
-								Object Detection and Instance Segmentation in the Dark
+								Low-light Object Detection and Instance Segmentation
 							</b>
 						</p>
 						<div class="row" style="position: relative">
@@ -180,17 +180,22 @@
                            -->
                         <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b style="font-family:arial;color:black;font-size:16px;">
-								Object Detection and Instance Segmentation in the Dark
+								Low-light Object Detection and Instance Segmentation
 							</b>
 						</p>
 						
                         <p style="font-size:16px;font-variant-numeric: lining-nums;">
-							We will use the low-light object detection and instance segmentation dataset proposed by Prof. Fu’s team in <font color="black">[a]</font>. They capture a low-light image dataset using a Canon EOS 5D Mark IV camera and annotate the images with object detection bounding boxes and instance segmentation masks. The images are provided in both sRGB-JPEG and RAW formats, each format consists of paired short-exposure low-light and corresponding long-exposure normal-light images.  The bounding box and  annotations are produced by professional annotators. There are no ethical concerns with this dataset as they only capture common objects in static scenes and there are no persons appearing in the images. We will host the competition using open source online platform, e.g. CodaLab. All submissions are evaluated by our script running on the server and we will double check the results of top-rank methods manually before releasing the final test-set rating. 
+							In comparison to well-lit environments, low-light conditions pose significant challenges to maintaining image quality, often resulting in notable degradation such as loss of detail, color distortion, and pronounced noise. These factors detrimentally impact the performance of downstream visual tasks, particularly object detection and instance segmentation. Recognizing the critical importance of overcoming these obstacles, research into low-light object detection and instance segmentation has emerged as a pivotal area within the computer vision community, aiming to accurately localize and classify objects of interest under challenging lighting conditions. 
 						</p>
+
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							To propel research in this field forward, it is essential to assess proposed methods in real-world scenarios, where lighting conditions and image noise are inherently more complex and diverse. Consequently, we will utilize the Low-light Instance Segmentation (LIS) dataset, introduced by Prof. Fu’s team in [a], captured using a Canon EOS 5D Mark IV camera. The LIS dataset comprises paired images collected across various scenes, encompassing both indoor and outdoor environments. To ensure a comprehensive range of low-light conditions, we utilized different ISO levels (e.g., 800, 1600, 3200, 6400) for long-exposure reference images and deliberately adjusted exposure times using varying low-light factors (e.g., 10, 20, 30, 40, 50, 100) to simulate extremely low-light conditions accurately. Each image pair in the LIS dataset includes instances of common object classes (bicycle, car, motorcycle, bus, bottle, chair, dining table, TV), accompanied by precise instance-level pixel-wise labels. These annotations serve as essential metrics for evaluating the performance of proposed methods in terms of object detection and instance segmentation. We will host the competition using open source online platform, e.g. CodaLab. All submissions are evaluated by our script running on the server and we will double check the results of top-rank methods manually before releasing the final test-set rating.
+						</p>
+
                         <p style="font-size:16px; margin-bottom: 20px">
 							<b style="font-family:arial;color:black;font-size:16px;">
-								<a href="Instance Segmentation in the Dark.pdf">
-								[a] Linwei Chen, Ying Fu, Kaixuan Wei, Deizhi Zheng, Felix Heide: Instance Segmentation in the Dark. In IJCV Submission
+								<a href="https://link.springer.com/article/10.1007/s11263-023-01808-8">
+									[a] Chen, L., Fu, Y., Wei, K., Zheng, D., & Heide, F. (2023). Instance Segmentation in the Dark. International Journal of Computer Vision
 								</a>
 							</b>
 						</p>

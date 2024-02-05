@@ -111,11 +111,11 @@
 
 						<ul class="nav nav-pills flex-column new_challenge">
 							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
-							<li class="nav-item"><a class="nav-link" href="index.html">Challenge Introduction</a></li>
-							<li class="nav-item"><a class="nav-link active" href="dataset_generation.html">Dataset Introduction</a></li>
-							<li class="nav-item"><a class="nav-link" href="download.html">Dataset Download</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link active" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
 							<li class="nav-item"><a class="nav-link" href="evaluation.html">Evaluation</a></li>
-							<li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
 							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
 						</ul>
 
@@ -124,7 +124,7 @@
 
 						<p style="font-size:20px;">
 							<b style="font-family:arial;color:black;font-size:16px;">
-								Motivation
+								Data Collection
 							</b>
 						</p>
 
@@ -133,7 +133,7 @@
 								Motivation 
 							</b>
 							<br/> -->
-							Though evaluating on synthetic low-light images is a common and convenient practice, its results can severely deviate from the real world due to the much more complicated lighting conditions and image noise. To reveal and systematically investigate the effectiveness of the proposed method in the real world, a real low-light image dataset for instance segmentation is necessary and urgently needed. Considering there is no suitable dataset, therefore, we collect and annotate a Low-light Instance Segmentation (LIS) dataset using a Canon EOS 5D Mark IV camera.
+							The LIS dataset comprises paired images collected across various scenes, encompassing both indoor and outdoor environments. To ensure a comprehensive range of low-light conditions, we utilized different ISO levels (e.g., 800, 1600, 3200, 6400) for long-exposure reference images and deliberately adjusted exposure times using varying low-light factors (e.g., 10, 20, 30, 40, 50, 100) to simulate extremely low-light conditions accurately. Each image pair in the LIS dataset includes instances of common object classes (bicycle, car, motorcycle, bus, bottle, chair, dining table, TV), accompanied by precise instance-level pixel-wise labels. These annotations serve as essential metrics for evaluating the performance of proposed methods in terms of object detection and instance segmentation.
 						</p>
 
                         <!-- <p style="font-size:16px;">
