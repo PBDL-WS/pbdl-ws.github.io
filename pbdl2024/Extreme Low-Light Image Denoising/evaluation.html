@@ -15,8 +15,17 @@
 <link rel="stylesheet" type="text/css" href="../styles/speakers.css">
 <link rel="stylesheet" type="text/css" href="../styles/speakers_responsive.css">
 <link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
+<style>
+    #myTextarea {
+      margin: 0 auto; /* 设置左右外边距为 auto，实现水平居中 */
+      display: block; /* 使其成为块级元素，占满父容器宽度 */
+    }
+  </style>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
 </head>
@@ -129,10 +138,14 @@
 								Evaluation Metric
 							</b>
 						</p>
-                        <p style="font-size:16px;">
-							In the challenge, we use mean Intersection over Union as the evaluation metric.
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							We employ the standard Peak Signal To Noise Ratio (PSNR) and the Structural Similarity Index (SSIM) in grayscale, as is commonly used in the literature. The final evaluation metric can be calculated using the following formula:
 						</p>
-                        <p style="font-size:16px;">
+                        <p>
+							\(Score = \log_k(SSIM * k^{PSNR}) = PSNR + \log_k(SSIM)\)
+						</p>
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							In our implementation, k=1.2.
 						</p>
                         <p style="font-size:16px;">
 							<b style="font-family:arial;color:black;font-size:16px;">
@@ -140,35 +153,74 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							To submit your result, you are required to submit a .zip file. You may pickup any name for the zip file.
+							The test data are provided in the following format:	
 						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="16" cols="75">
+|-- test.zip
+	|-- CanonEOS70D
+	|	|-- image_mat
+	|	|	|-- scene-1_IMG_0004_1_1_crop.mat
+	|	|	`-- ...
+	|	|-- image_rgb
+	|		|-- scene-1_IMG_0004_1_1_crop.jpg
+	|		`-- ...
+	|-- CanonEOS700D
+	|	|-- image_mat
+	|	|	|-- scene-1_IMG_0004_1_1_crop.mat
+	|	|	`-- ...
+	|	|-- image_rgb
+	|	|	|-- scene-1_IMG_0004_1_1_crop.jpg
+	|		`-- ...
+	`-- ...		</textarea>
+						<p style="font-size:16px;">
+							And as your submission, you should upload a zip file which are as the following format:
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="10" cols="75">
+|-- test.zip
+	|-- CanonEOS70D
+	|	|-- image_mat
+	|		|-- scene-1_IMG_0004_1_1_crop_gt.mat
+	|		`-- ...
+	|-- CanonEOS700D
+	|	|-- image_mat
+	|		|-- scene-1_IMG_0004_1_1_crop_gt.mat
+	|		`-- ...
+	`-- ...		</textarea>
+						
+
                         <p style="font-size:16px;">
 							<b class="font-italic">
 								Format of Filenames 
 							</b>
 							<br/>
-							Within the zip file, you are required to name each of the segmentation result using the same name as the HSI name. For example, the segmentation result for HSI named:
+							Within the zip file, you are required to name each of the result image using the same name as the input image name, and save as .mat format. For example, the input file for the test set named:
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							20210409 140341 03.hsd
+							scene-1_IMG_0004_1_1_crop.mat
 						</p>
                         <p style="font-size:16px;">
 							should be
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							&lt rgb20210409 140341 03.png >
+							&lt scene-1_IMG_0004_1_1_crop_gt.mat >
 						</rgb20190528>
 						</p>
                         <p style="font-size:16px;">
-							All the png files should be under the same folder, there should be no subfolders in your submission.
+							You should insert one "_gt" into the file names. And all the .mat files should be under the same folder, there should be no subfolders in your submission.
 						</p>
                         <p style="font-size:16px;">
 							<b class="font-italic">
-								Format of Images
+								Format of .mat File
 							</b>
 							<br/>
-							You are required to submit you segmentation result using the specified code of color. The segmentation result should be stored as png image. Specifically, 8-bit, single channel, L mode png format. The color code should be the same as provided in Fig. 2.3.
+							The format included in the mat file is as follows:
 						</p>
+						<table style="width:40%; border-spacing:2;font-size:16px;font-variant-numeric: lining-nums;" >
+							<tbody><tr><th width="30%">Key</th> <th width="70%">Value</th></tr>
+							<tr><td>&nbsp;&nbsp;name</td><td>test_scene_1_0001.mat</td></tr>
+							<tr><td>&nbsp;&nbsp;raw_image</td><td>ndarray(512,512,4)</td></tr>
+						  </tbody></table>
+						  <br>
 
                         <p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Submission</b></p>
 

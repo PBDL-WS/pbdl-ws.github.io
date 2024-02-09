@@ -129,7 +129,7 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							In the challenge, we use mean Intersection over Union as the evaluation metric.
+							In the challenge, we utilize three evaluation metrics for assessment: Peak signal-to-noise ratio (PSNR), tone-mapped PSNR (PSNR-μ), Structural Similarity (SSIM) and multi-scale SSIM (MS-SSIM).
 						</p>
                         <p style="font-size:16px;">
 						</p>
@@ -139,34 +139,54 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							To submit your result, you are required to submit a .zip file. You may pickup any name for the zip file.
+							To submit your results, you must provide a .zip file. The name of the zip file can be chosen at your discretion.
 						</p>
+						<p style="font-size:16px;">
+							The validation/testing data are provided in the following format:	
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="6" cols="75">
+|-- test.zip
+	|-- 7U6A3446.mat
+	`-- ...    
+|-- valid.zip
+	|-- 7U6A8104.mat
+	`-- ... 		</textarea>
+						<p style="font-size:16px;">
+							And as your submission, you should upload a zip file which are as the following format:	
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="6" cols="75">
+|-- test.zip
+	|-- 7U6A3446.mat
+	`-- ...    
+|-- valid.zip
+	|-- 7U6A8104.mat
+	`-- ... 		</textarea>
                         <p style="font-size:16px;">
 							<b class="font-italic">
 								Format of Filenames 
 							</b>
 							<br/>
-							Within the zip file, you are required to name each of the segmentation result using the same name as the HSI name. For example, the segmentation result for HSI named:
+							Within the zip file, each HDR reconstruction image should be named identically to its input name. For instance, the HDR reconstruction result for the input named：
 						</p>
-                        <p style="font-size:16px;" class="text-center">
-							20210409 140341 03.hsd
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;" class="text-center">
+							7U6A3446.mat
 						</p>
-                        <p style="font-size:16px;">
-							should be
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							should be named
 						</p>
-                        <p style="font-size:16px;" class="text-center">
-							&lt rgb20210409 140341 03.png >
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;" class="text-center">
+							&lt 7U6A3446.mat >
 						</rgb20190528>
 						</p>
                         <p style="font-size:16px;">
-							All the png files should be under the same folder, there should be no subfolders in your submission.
+							All the mat files should be under the same folder, there should be no subfolders in your submission.
 						</p>
-                        <p style="font-size:16px;">
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b class="font-italic">
 								Format of Images
 							</b>
 							<br/>
-							You are required to submit you segmentation result using the specified code of color. The segmentation result should be stored as png image. Specifically, 8-bit, single channel, L mode png format. The color code should be the same as provided in Fig. 2.3.
+							Your reconstruction frames should be saved as mat format, using the uint16 datatype.
 						</p>
 
                         <p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Submission</b></p>

@@ -171,24 +171,38 @@
                         <p style="font-size:16px;">
 							LIS dataset should follow folder structure bellow, it use the same type of annotation with COCO: 
 						</p>
+ 						<textarea id="myTextarea" name="myTextarea" rows="6" cols="75">
+	├── LIS
+	│   ├── RAW-dark
+	│   │   ├── lis_xxxxxx.png
+	│   ├── annotations
+	│   │   ├──lis_coco_png_raw_dark_trainonly_challenge.json 
+	│   │   ├──…</textarea>
 						<p style="font-size:16px;">
-							├── LIS
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Citation
+							</b>
 						</p>
 						<p style="font-size:16px;">
-							│   ├── RAW-dark
+							If you use this dataset for any purpose, please cite our <a href="https://github.com/ying-fu/LODDataset/tree/main">previous work</a>
 						</p>
-						<p style="font-size:16px;">
-							│   │   ├── lis_xxxxxx.png
-						</p>
-						<p style="font-size:16px;">
-							│   ├── annotations
-						</p>
-						<p style="font-size:16px;">
-							│   │   ├──lis_coco_png_raw_dark_trainonly_challenge.json 
-						</p>
-						<p style="font-size:16px;">
-							│   │   ├──…
-						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="16" cols="100">
+@article{2023lis,
+	title={Instance Segmentation in the Dark},
+	author={Chen, Linwei and Fu, Ying and Wei, Kaixuan and Zheng, Dezhi and Heide, Felix},
+	journal={International Journal of Computer Vision},
+	volume={131},
+	number={8},
+	pages={2198-2218},
+	year={2023},
+	publisher={Springer}
+}
+@inproceedings{fuying-2021-bmvc,
+	title={Crafting Object Detection in Very Low Light},
+	author={Yang, Hong and Kaixuan, Wei and Linwei, Chen and Ying, Fu},
+	booktitle={British Machine Vision Conference (BMVC)},
+	year={2021}
+} </textarea>					
 
                         <!-- <p style="font-size:16px;">
 							<b class="font-italic">

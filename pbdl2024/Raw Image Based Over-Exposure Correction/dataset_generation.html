@@ -133,7 +133,7 @@
 								Motivation 
 							</b>
 							<br/> -->
-							We capture a real paired Raw-to-HDR dataset for HDR reconstruction from a single Raw image. The captured dataset covers a large range of HDR scenarios, including modern/ancient buildings, art districts, tourist attractions, street shops and restaurants, abandoned factories, city views and so on. Those images are captured at different times of the day, including daytime and nighttime, which further guarantees the diversity of the paired Raw-to-HDR dataset. The data capture process involves several steps. Initially, we carefully select scenes with high dynamic range potential. Then, using a Canon 5D Mark IV camera mounted on a tripod, we employ bracket exposure mode to capture different exposures of the same scene. The raw images taken in challenging lighting conditions, specifically from -3EV to +3EV, are used as input images. The corresponding ground truth images are created using an HDR merging method, as described by Debevec et al. (2008).
+							The RPO dataset is the first specialized collection to systematically study the generality and practicality of over-exposure correction models.  The dataset encompasses both indoor and outdoor scenes, captured in daylight or under direct illumination to avoid flickering. Each short-exposure (normal-exposure) image is paired with long-exposure (over-exposure) images with 4 ratios (x3, x5, x8, x10). The use of mirrorless cameras like the Canon EOS 5D Mark IV, equipped with a full-frame CMOS sensor, ensured high-resolution captures and minimized vibrations. 
 						</p>
 
                         <!-- <p style="font-size:16px;">
@@ -144,11 +144,11 @@
 							The dataset collection is in Shanghai for three days in June. The we collected data in a variety of environment including: crowded traffic area, famous buildings and structures, CBD, highways, quiet suburbs, overpasses and underground parking. The weather condition includes sunny and cloudy days. And the lighting condition includes day, night and sunset. We use standard color board for color calibration. We collecting data, the car is driving at a speed in the range of 20-50km/h. The hyperspectral camera is working at 1fps. The field of view (FOV) is 16 × 12 degrees in current lens configuration. The camera is vertical mounted to enable capturing of a wider dynamic range.
 						</p> -->
 
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-6 offset-lg-3 col-md-12">
                                 <img src="dataset_1.png" class="img-responsive" style="width: 150%; margin-left: -110px;">
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="row" style="margin-bottom:1.5rem">
                             <div class="col-lg-12 col-md-12">
                                 <p class="text-center font-italic" style="line-height:1.2rem; margin-top: 0.4rem ">
@@ -162,28 +162,28 @@
 
                         <p style="font-size:20px;">
 							<b style="font-family:arial;color:black;font-size:16px;">
-								Dataset characteristics
+								Dataset Composition
 							</b>
 						</p>
 
                         <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b class="font-italic">
-								High resolution 
+								Short Exposure Images (Normal, GT) 
 							</b>
 							<br/>
-							Our dataset stands out with its high resolution of 6720x4480, surpassing the common resolutions (below 1920x1080) found in other HDR datasets. This higher resolution captures finer details, offering a more comprehensive analysis for HDR reconstruction.
+							Captured in each scene using a tripod-mounted camera. The camera was set to automatic mode to find optimal aperture and exposure time settings, then switched to manual mode to lock these settings. Images were taken using a remote mobile app to control the shutter, minimizing lens vibration.
 						</p>
                         <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b class="font-italic">
-								High bit-depth ground truth 
+								Long Exposure Images (Over-exposure, OE) 
 							</b>
 							<br/>
-							The SRHDR dataset features ground truth HDR images with a bit-depth of over 20 bits, utilizing a linear HDR format. This high bit-depth ensures a richer and more precise representation of color and light intensities.
+							Following the capture of short exposure GT images, only the "exposure time" setting was adjusted using the mobile app to simulate real over-exposure caused by incorrect settings. Four predetermined over-exposure ratios were used (×3, ×5, ×8, ×10). It was ensured that the camera was not touched during both long and short exposure captures to prevent any misalignment due to lens vibration.
 						</p>
                         <!-- <p style="font-size:16px;">
 							We use Computer Vision Annotation Tool (CVAT) as the labeling tool. And the labels and colors are consistent with CityScape[1] dataset.
 						</p> -->
-                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+                        <!-- <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b class="font-italic">
 								Real paired samples 
 							</b>
@@ -196,7 +196,7 @@
 							</b>
 							<br/>
 							The use of unprocessed raw sensor data as the input format leverages the higher bit-depth and superior intensity tolerance of raw data, effectively addressing the common issue of insufficient scene information in HDR image processing.
-						</p>
+						</p> -->
                         <!-- <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b style="font-family:arial;color:black;font-size:16px;">
 								Raw images as input

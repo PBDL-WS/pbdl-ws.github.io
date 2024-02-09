@@ -17,6 +17,17 @@
 <link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<style>
+    pre {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      width: 70%; /* 设置宽度为50% */
+      margin: 0 auto; /* 居中显示，上下边距为0，左右边距为auto */
+    }
+</style>
 
 
 </head>
@@ -126,8 +137,9 @@
 						<p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Access the Challenge Dataset</b></p>
 
 						<!--<p style="font-size:16px;color:red">The challenge is closed.</p>-->
-						<p style="font-size:16px;">Challenge Dataset can be downloaded from here: &nbsp <a href="" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Training and Testing Set</a></p>
-						
+						<p style="font-size:16px;"><a href="https://pan.baidu.com/s/1uDhSpoJW9SAIDniIJ35lPA?pwd=pdv5" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Training RAW videos: &nbsp</a>Access Code:pdv5</p>
+						<p style="font-size:16px;"><a href="https://pan.baidu.com/s/1-ipX-rhQ13WI6I7-dY9Hlw?pwd=c9gj" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Test videos (input): &nbsp</a>Access Code:c9gj</p>
+
 						<p style="font-size:16px;color:red">
 							The Dataset is for this chanllenge and research purpose only. Commercial use is not permitted.
 						</p>
@@ -175,13 +187,16 @@
 								Train 
 							</b>
 							<br/>
-							In the training dataset folder, you will find all images, each of which is named with an index. In the folder, you will find five files for each image, which are:
+							In the training dataset folder, you will find all video clips, each of which is named with an index. In the folder, you will find the path like:
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							&lt ∗.hsd >, &nbsp; &lt rgb ∗ .jpg >, &nbsp; &lt rgb ∗ _gray.png >, &nbsp; &lt rgb ∗ .png >,
+							"noisy/1(scene number)/100(noise level)/1.tiff(frame number)"
 						</p>
                         <p style="font-size:16px;">
-							They are: 1. the hyperspectral data file, 2. The RGB visualization of the hyperspectral image, 3. Semantic labelling coded from 0 to 18 as per Table 1, 4. Visualization of the semantic labelling by overlay with the RGB image. The ∗ is the filename which is the same as the folder name.
+							The arrangement of the videos is:
+						</p>
+						<p style="font-size:16px;" class="text-center">
+							Scene number / noise level / frame number
 						</p>
 
                         <p style="font-size:16px;">
@@ -189,28 +204,34 @@
 								Test 
 							</b>
 							<br/>
-							In the testing dataset, you will find 200 groups of images. The same as training dataset, each of the group is named with a file index. In each of the group, you will find two files, which are:
+							In the testing dataset, you will find 4 video clip. The same as training dataset, each of the group is named with:
 						</p>
                         <p style="font-size:16px;" class="text-center">
-							&lt ∗.hsd >, &nbsp; &lt rgb ∗ .jpg > .
+							Scene number / noise level / frame number
 						</p>
 
 						<p style="font-size:16px;">
-							They are: 1. the hyperspectral data file, 2. The RGB visualization of the hyperspectral image. The ∗ is the filename which is the same as the folder name.
+							Note that the submission should be uploaded for each noise level. So make sure you pack the result of each noise level in one folder like:
+						</p>
+						<p style="font-size:16px;" class="text-center">
+							Noise level / Scene number / frame number
+						</p>
+						<p style="font-size:16px;">
+							Then, submit each folder of noise level for evaluation.
 						</p>
 
-						<div class="row">
+						<!-- <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <p class="text-center font-italic" style="line-height:1.2rem; margin-top: 0.4rem "><b>Table 1. </b>A summary of dataset label</p>
                             </div>
-                        </div>
+                        </div> -->
 
 
-						<div class="row" style="position: relative">
+						<!-- <div class="row" style="position: relative">
                             <div class="col-lg-6 offset-lg-3 col-md-12">
                                 <img src="../images/Table.1.png" class="img-responsive" style="width: 100%;margin-top: 0.4rem">
                             </div>
-                        </div>
+                        </div> -->
 
 
                         <p style="font-size:16px;">
@@ -219,10 +240,29 @@
 								Read Hyperspectral Cubic Dataset 
 							</b>
 							<br/>
-							In the dataset package, you will find a MATLAB file named readHSD.m, which is the MATLAB code to read the hyperspectral data. The data format is similar as RGB images, the different is the file has 128 channels rather than 3 channels.
+							In the dataset package, you will find a tiff file for each frame. It is in RAW domain captured by a DSLR camera. Here is an example file to read and normalize (given black level 512 and white level 15360) the tiff image:
 						</p>
+						<pre>
+							<code>
+raw = cv2.imread(path, -1) 
+# given the path of tiff file
+black_level = 512
+white_level = 15360
+im = raw.astype(np.float32)
+im = np.maximum(im - black_level, 0) / (white_level - black_level)
 
-
+im = np.expand_dims(im, axis=2)
+img_shape = im.shape
+H = img_shape[0]
+W = img_shape[1]
+# RGBG
+out = np.concatenate((im[0:H:2, 0:W:2, :],
+                      im[0:H:2, 1:W:2, :],
+                      im[1:H:2, 0:W:2, :],
+                      im[1:H:2, 1:W:2, :]), axis=2)
+# you can use the out for 4-channel image or the original Bayer pattern 1-channel image
+							</code>
+						  </pre>
 					</div>
 				</div>
 			</div>

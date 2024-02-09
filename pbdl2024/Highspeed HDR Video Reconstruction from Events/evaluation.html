@@ -86,8 +86,7 @@
 						<div class="home_content">
 							<div class="home_date">The challenge on</div>
 							<div class="home_title">
-								<font color="red">H</font>ighspeed <font color="red">H</font>DR <font color="red">V</font>ideo <font color="red">R</font>econstruction</div>
-							<div class="home_title">	
+								<font color="red">H</font>ighspeed <font color="red">H</font>DR <font color="red">V</font>ideo <font color="red">R</font>econstruction	
 								<font color="red">F</font>rom <font color="red">E</font>vent 
 							</div>
 						</div>
@@ -130,7 +129,7 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							In the challenge, we use mean Intersection over Union as the evaluation metric.
+							In the challenge, we utilize three evaluation metrics for assessment: Root Mean Square Error (RMSE), Structural Similarity (SSIM), and Learned Perceptual Image Patch Similarity (LPIPS).
 						</p>
                         <p style="font-size:16px;">
 						</p>
@@ -140,34 +139,105 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							To submit your result, you are required to submit a .zip file. You may pickup any name for the zip file.
+							To submit your results, you must provide a .zip file. The name of the zip file can be chosen at your discretion.
 						</p>
+						<p style="font-size:16px;">
+							The training data are structured in the following hdf5 format:	
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="32" cols="75">
+	+-- '/'
+	|   +-- attribute "duration"
+	|   +-- attribute "num_events"
+	|   +-- attribute "num_neg"
+	|   +-- attribute "num_pos"
+	|   +-- attribute "sensor_resolution"
+	|   +-- attribute "t0"
+	|   +-- group "events"
+	|   |   +-- dataset "ps"
+	|   |   +-- dataset "ts"
+	|   |   +-- dataset "xs"
+	|   |   +-- dataset "ys"
+	|   |   
+	|   +--	group "images"
+	|   |   +-- attribute "num_images"
+	|   |   +-- dataset "image000000000"
+	|   |   |   +-- attribute "event_idx"
+	|   |   |   +-- attribute "size"
+	|   |   |   +-- attribute "timestamp"
+	|   |   |   +-- attribute "type"
+	|   |   |   
+	|   ...
+	|   +--	group "images"
+	|   |   +-- attribute "num_images"
+	|   |   +-- dataset "image000002827"
+	|   |   |   +-- attribute "event_idx"
+	|   |   |   +-- attribute "size"
+	|   |   |   +-- attribute "timestamp"
+	|   |   |   +-- attribute "type"
+	|   |   |   
+	|   |   
+	|  </textarea>
+						<p style="font-size:16px;">
+							And the val/test data are structured as:
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="13" cols="75">
+	+-- '/'
+	|   +-- attribute "duration"
+	|   +-- attribute "num_events"
+	|   +-- attribute "num_neg"
+	|   +-- attribute "num_pos"
+	|   +-- attribute "sensor_resolution"
+	|   +-- attribute "t0"
+	|   +-- group "events"
+	|   |   +-- dataset "ps"
+	|   |   +-- dataset "ts"
+	|   |   +-- dataset "xs"
+	|   |   +-- dataset "ys"
+	|   </textarea>
+                        <p style="font-size:16px;">
+							And as your submission, you should upload a zip file which are as the following format:
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="8" cols="75">
+|-- test.zip
+	|-- 1
+	    |-- 00000.tiff
+	    `-- ...    
+|-- valid.zip
+	|-- 1
+	    |-- 00000.tiff
+	    `-- ... 		</textarea>
                         <p style="font-size:16px;">
 							<b class="font-italic">
 								Format of Filenames 
 							</b>
 							<br/>
-							Within the zip file, you are required to name each of the segmentation result using the same name as the HSI name. For example, the segmentation result for HSI named:
+							Within the zip file, each video sequence's reconstruction folder should be named identically to its input name. For instance, the HDR reconstruction result for the input named：
 						</p>
-                        <p style="font-size:16px;" class="text-center">
-							20210409 140341 03.hsd
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;" class="text-center">
+							1.h5
 						</p>
-                        <p style="font-size:16px;">
-							should be
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							should be placed in a folder named
 						</p>
-                        <p style="font-size:16px;" class="text-center">
-							&lt rgb20210409 140341 03.png >
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;" class="text-center">
+							&lt 1 >
 						</rgb20190528>
+						</p>
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							The reconstructed video frames for "1.h5" must be located inside the "1" folder, with names following a five-digit zero-padded format, such as
+						</p>
+						<p style="font-size:16px;font-variant-numeric: lining-nums;" class="text-center">
+							1/00000.tiff, 1/00001.tiff, ……, 1/00399.tiff
 						</p>
                         <p style="font-size:16px;">
 							All the png files should be under the same folder, there should be no subfolders in your submission.
 						</p>
-                        <p style="font-size:16px;">
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							<b class="font-italic">
 								Format of Images
 							</b>
 							<br/>
-							You are required to submit you segmentation result using the specified code of color. The segmentation result should be stored as png image. Specifically, 8-bit, single channel, L mode png format. The color code should be the same as provided in Fig. 2.3.
+							Your reconstruction frames should be saved as TIFF images, using the uint16, single-channel, TIFF format.
 						</p>
 
                         <p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Submission</b></p>

@@ -126,7 +126,7 @@
 						<p style="font-size:16px;"><b style="font-family:arial;color:black;font-size:16px;">Access the Challenge Dataset</b></p>
 
 						<!--<p style="font-size:16px;color:red">The challenge is closed.</p>-->
-						<p style="font-size:16px;">Challenge Dataset can be downloaded from here: &nbsp <a href="https://isis-data.science.uva.nl/cv/HyperspectralCityV2.0/" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Training and Testing Set</a></p>
+						<p style="font-size:16px;">Challenge Dataset can be downloaded from here: &nbsp <a href="https://pan.baidu.com/s/1YT0AqHk9NKNhpU7LrufOnA?pwd=btwn" target="_blank"><img src="../images/baidu.png" style="height: 1rem">Testing Dataset</a></p>
 						
 
 						
@@ -173,6 +173,45 @@
                         <p style="font-size:16px;font-variant-numeric: lining-nums;">
 							The ELD.zip file contains an extremely low-light dataset captured by four different cameras (CanonEOS70D, CanonEOS700D, NikonD850, SonyA7S2). The dataset includes 10 scenes named sence-1 to sence-10. Within each scene, IMG_0001, IMG_0006, IMG_0011, IMG_0016 serve as ground truth, while the other 12 images are dark images with noise captured at different exposure times and ISO settings. All 120 dark images provided by each camera serve as the test set, and no training data is provided for the extremely low-light denoising challenge.
 						</p>
+						<p style="font-size:16px;">
+							The test data are provided in the following format:	
+						</p>
+						<textarea id="myTextarea" name="myTextarea" rows="16" cols="50">
+|-- test.zip
+    |-- CanonEOS70D
+    |   |-- image_mat
+    |   |   |-- scene-1_IMG_0004_1_1_crop.mat
+    |   |   `-- ...
+	|	|-- image_rgb
+	|		|-- scene-1_IMG_0004_1_1_crop.jpg
+	|		`-- ...
+	|-- CanonEOS700D
+	|   |-- image_mat
+	|   |   |-- scene-1_IMG_0004_1_1_crop.mat
+	|   |   `-- ...
+	|	|-- image_rgb
+	|		|-- scene-1_IMG_0004_1_1_crop.jpg
+	|		`-- ...
+	`-- ...		</textarea>
+                        <p style="font-size:16px;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Citation
+							</b>
+						</p>
+                        <p style="font-size:16px;">
+							If you use this dataset for any purpose, please cite our previous work
+						</p>
+<textarea id="myTextarea" name="myTextarea" rows="10" cols="100">
+@article{wei2021physics,
+	title={Physics-based noise modeling for extreme low-light photography},
+	author={Wei, Kaixuan and Fu, Ying and Zheng, Yinqiang and Yang, Jiaolong},
+	journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	volume={44},
+	number={11},
+	pages={8520-8537},
+	year={2022},
+	publisher={IEEE}
+}</textarea>	
                         <!-- <p style="font-size:16px;">
 							<b class="font-italic">
 								Train 

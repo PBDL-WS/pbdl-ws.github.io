@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Challenge</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Conference project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../styles/bootstrap4/bootstrap.min.css">
+<link href="../plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="../styles/speakers.css">
+<link rel="stylesheet" type="text/css" href="../styles/speakers_responsive.css">
+<link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
+
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Menu -->
+    
+	<div class="menu trans_500">
+		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+			<div class="menu_close_container"><div class="menu_close"></div></div>
+			<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			<ul>
+				<li class="menu_item"><a href="../index.html">Home</a></li>
+				<li class="menu_item"><a href="../organizers.html">Organizers</a></li>
+				<li class="menu_item"><a href="../speakers.html">Speakers</a></li>
+				<li class="menu_item"><a href="../callforpapers.html">Call for papers</a></li>
+				<li class="menu_item"><a href="../challenge/index.html">Challenges</a></li>
+				<li class="menu_item"><a href="../program.html">Program</a></li>
+			</ul>
+		</div>
+	</div>
+    
+	<!-- Home -->
+
+	<div class="home">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="background.jpg" data-speed="0.8"></div>
+
+		<!-- Header -->
+
+		<header class="header" id="header">
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul>
+													<li><a href="../index.html">Home</a></li>
+													<li><a href="../organizers.html">Organizers</a></li>
+													<li><a href="../speakers.html">Speakers</a></li>
+													<li><a href="../callforpapers.html">Call for papers</a></li>
+													<li class="active"><a href="../challenge/index.html">Challenges</a></li>
+													<li><a href="../program.html">Program</a></li>
+													
+												</ul>
+											</nav>
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>	
+			</div>
+		</header>
+		<div class="home_content_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_date">The challenge on</div>
+							<div class="home_title">
+								<font color="red">L</font>ow-light <font color="red">R</font>aw <font color="red">I</font>mage <font color="red">E</font>nhancement</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	</div>
+
+	<!-- Speakers -->
+
+	 <div id="site_content">
+      
+
+	  <div><!--new body-->
+        <div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-4"><!--小导航部分-->
+
+						
+
+						<ul class="nav nav-pills flex-column new_challenge">
+							<li class="nav-item"><a class="nav-link" href="important_dates.html">Important Dates</a></li>
+							<li class="nav-item"><a class="nav-link" href="index.html">Introduction</a></li>
+							<li class="nav-item"><a class="nav-link active" href="dataset_generation.html">Dataset</a></li>
+							<li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+							<li class="nav-item"><a class="nav-link" href="evaluation.html">Evaluation</a></li>
+							<!-- <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li> -->
+							<!-- <li class="nav-item"><a class="nav-link" href="acknowledgement_and_references.html">Acknowledgement and References</a></li> -->
+						</ul>
+
+					</div>
+					<div class="col-lg-10 col-md-8"><!--内容部分-->
+
+						<p style="font-size:20px;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Data Collection
+							</b>
+						</p>
+
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<!-- <b class="font-italic">
+								Motivation 
+							</b>
+							<br/> -->
+							We use Canon EOS 5D Mark IV to capture the data. The resolution of captured images is set to 6720 × 4480. To capture low/normal-light image pairs, the camera was mounted on a sturdy tripod and controlled remotely via a mobile APP. The camera was not touched between the capture process of normal-light and low-light images to avoid vibration. For each pair, we first take the normal-light image and fix ISO and aperture. Then the low-light images are captured by changing the shutter (exposure time) to simulate low-light conditions. We capture our dataset indoor and outdoor to increase the richness of the scene, where include both natural scenarios and manual builds.
+						</p>
+
+                        <!-- <p style="font-size:16px;">
+							<b class="font-italic">
+								Outdoor data collection in Shanghai 
+							</b>
+							<br/>
+							The dataset collection is in Shanghai for three days in June. The we collected data in a variety of environment including: crowded traffic area, famous buildings and structures, CBD, highways, quiet suburbs, overpasses and underground parking. The weather condition includes sunny and cloudy days. And the lighting condition includes day, night and sunset. We use standard color board for color calibration. We collecting data, the car is driving at a speed in the range of 20-50km/h. The hyperspectral camera is working at 1fps. The field of view (FOV) is 16 × 12 degrees in current lens configuration. The camera is vertical mounted to enable capturing of a wider dynamic range.
+						</p> -->
+
+                        <!-- <div class="row">
+                            <div class="col-lg-6 offset-lg-3 col-md-12">
+                                <img src="dataset_1.png" class="img-responsive" style="width: 200%;margin-left: -250px;">
+                            </div>
+                        </div> -->
+                        <!-- <div class="row" style="margin-bottom:1.5rem">
+                            <div class="col-lg-12 col-md-12">
+                                <p class="text-center font-italic" style="line-height:1.2rem; margin-top: 0.4rem ">
+									<b>
+										Fig.3. 
+									</b>
+									Specifications of the hyperspectral data
+								</p>
+                            </div>
+                        </div> -->
+
+                        <p style="font-size:20px;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Dataset characteristics
+							</b>
+						</p>
+
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b class="font-italic">
+								208 scenes & 832 pairs
+							</b>
+							<br/>
+							It contains 832 image pairs in 208 scenes, which means we have 4 different exposure ratios (8,16,32,64) for the same scene.
+						</p>
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b class="font-italic">
+								High resolution
+							</b>
+							<br/>
+							Our dataset stands out with its high resolution of 6720x4480, surpassing the common resolutions (below 1920x1080) found in other datasets. This higher resolution captures finer details, offering a more comprehensive analysis for low-light enhancement.
+						</p>
+                        <!-- <p style="font-size:16px;">
+							We use Computer Vision Annotation Tool (CVAT) as the labeling tool. And the labels and colors are consistent with CityScape[1] dataset.
+						</p> -->
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b class="font-italic">
+								RAW image as input 
+							</b>
+							<br/>
+							Raw images as input. The use of unprocessed raw sensor data as the input format leverages the higher bit-depth and superior intensity tolerance of raw data, effectively addressing the common issue of insufficient scene information in low-light enhancement.
+						</p>
+						<!-- <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b class="font-italic">
+								No extra equipment  
+							</b>
+							<br/>
+							Our dataset collecting pipeline requires no extra equipment used in previous datasets.
+						</p> -->
+						<!-- <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b class="font-italic">
+								Rich darkness levels 
+							</b>
+							<br/>
+							The darkness levels of low-light images in PNLI are rich, and it can truly restore various situations where the actual image brightness is missing due to insufficient ambient light or human operation mistakes. Therefore, it can effectively verify the stability and robustness of our proposed method.
+						</p> -->
+                        <!-- <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							<b style="font-family:arial;color:black;font-size:16px;">
+								Hyperspectral Image Compression
+							</b>
+						</p>
+                        <p style="font-size:16px;font-variant-numeric: lining-nums;">
+							Unlike RGB images which only has 3 channels, each hyperspectral images in our dataset has 128 channels. Without compression, each hyperspectral cubic will take more than 1Gigabytes storage and will make it unreasonable for online transfer. In our current release, we compress the image using H.264 encoder and decoder with a quality setting at 90%. The compression ratio is smaller than 2% and the final dataset size is around 150 Gigabytes.
+						</p> -->
+
+
+					</div>
+				</div>
+			</div>
+    </div><!--new body end-->
+    </div>
+</div>
+
+<!--<script src="../static/js/jquery-3.2.1.min.js"></script>-->
+<script src="../styles/bootstrap4/popper.js"></script>
+<script src="../styles/bootstrap4/bootstrap.min.js"></script>
+<script src="../plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="../plugins/easing/easing.js"></script>
+<script src="../plugins/parallax-js-master/parallax.min.js"></script>
+<script src="../js/speakers.js"></script>
+</body>
+</html>
