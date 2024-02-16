@@ -17,8 +17,26 @@
 <link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<style>
+    h2 {
+      color: orange;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px;
+    }
+	h2 a {
+    color: rgb(0, 140, 255);
+    /* 其他样式属性 */
+    }
 
+    h2:hover {
+      background-color: #eaeaea;
+    }
 
+    .content {
+      display: block; /* 初始状态设置为显示 */
+    }
+</style>
 </head>
 <body>
 
@@ -120,9 +138,10 @@
 						</ul>
 
 					</div>
+					
 					<div class="col-lg-10 col-md-8"><!--内容部分-->
 
-						<p style="font-size:16px;">
+						<!-- <p style="font-size:16px;">
 							<b style="font-family:arial;color:black;font-size:16px;">
 								<a href="../HDR Reconstruction from a Single Raw Image/index.html">
 									1.HDR Reconstruction from a Single Raw Image
@@ -183,13 +202,98 @@
 									8.Low-light Raw Image Enhancement
 								</a>
 							</b>
-						</p>
+						</p> -->
+						<h2 onclick="toggleContent('section1')">
+							<a href="#">High Dynamic Range Imaging Challenge</a>
+						</h2>
+						<div id="section1" class="content">
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../HDR Reconstruction from a Single Raw Image/index.html">
+										1.HDR Reconstruction from a Single Raw Image
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Highspeed HDR Video Reconstruction from Events/index.html">
+										2.Highspeed HDR Video Reconstruction from Events
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Raw Image Based Over-Exposure Correction/index.html">
+										3.Raw Image Based Over-Exposure Correction
+									</a>
+								</b>
+							</p>
+						</div>
+					  
+						<h2 onclick="toggleContent('section2')">
+							<a href="#">Low-Light Enhancement Challenge</a>
+						</h2>
+						<div id="section2" class="content">
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Object Detection and Instance Segmentation in the Dark/index.html">
+										1.Low-light Object Detection and Instance Segmentation
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Low-light raw video denoising with realistic motion/index.html">
+										2.Low-light raw video denoising with realistic motion
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Low-light image enhancement/index.html">
+										3.Low-light SRGB image enhancement
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Extreme Low-Light Image Denoising/index.html">
+										4.Extreme Low-Light Image Denoising
+									</a>
+								</b>
+							</p>
+							<p style="font-size:16px;text-indent: 2em;">
+								<b style="font-family:arial;color:black;font-size:16px;">
+									<a href="../Low-light Raw Image Enhancement/index.html">
+										5.Low-light Raw Image Enhancement
+									</a>
+								</b>
+							</p>
 
-					
+						</div>
+					  
+						<script>
+							// 在页面加载完成后将内容部分切换为隐藏
+							document.addEventListener("DOMContentLoaded", function() {
+							  var contentSections = document.querySelectorAll('.content');
+							  contentSections.forEach(function(section) {
+								section.style.display = 'none';
+							  });
+							});
+						
+							function toggleContent(sectionId) {
+							  var content = document.getElementById(sectionId);
+							  if (content.style.display === "none") {
+								content.style.display = "block";
+							  } else {
+								content.style.display = "none";
+							  }
+							}
+						</script>
 					</div>
 				</div>
 			</div>
-    </div><!--new body end-->
+    	</div><!--new body end-->
     </div>
 </div>
 
