@@ -1057,3 +1057,12 @@ table tr td
 { background: #E5E5DB;
   color: #47433F;
   border-top: 1px solid #FFF;}
+
+footer {
+	background-color: #f0f0f0;
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }
