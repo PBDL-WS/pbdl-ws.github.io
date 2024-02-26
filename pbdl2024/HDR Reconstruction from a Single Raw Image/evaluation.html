@@ -17,6 +17,15 @@
 <link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<style>
+    #myTextarea {
+      margin: 0 auto; /* 设置左右外边距为 auto，实现水平居中 */
+      display: block; /* 使其成为块级元素，占满父容器宽度 */
+    }
+</style>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
 </head>
@@ -131,7 +140,11 @@
                         <p style="font-size:16px;">
 							In the challenge, we utilize three evaluation metrics for assessment: Peak signal-to-noise ratio (PSNR), tone-mapped PSNR (PSNR-μ), Structural Similarity (SSIM) and multi-scale SSIM (MS-SSIM).
 						</p>
-                        <p style="font-size:16px;">
+                        <p>
+							\(Score=\log_k(SSIM*k^{PSNR})+\log_k(MS-SSIM*k^{PSNR-µ})=PSNR+\log_k(SSIM)+PSNR-µ+\log_k(MS-SSIM)\)
+						</p>
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							In our implementation, k=1.2.
 						</p>
                         <p style="font-size:16px;">
 							<b style="font-family:arial;color:black;font-size:16px;">

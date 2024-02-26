@@ -17,6 +17,15 @@
 <link rel="stylesheet" type="text/css" href="../styles/new_challenge.css">
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<style>
+    #myTextarea {
+      margin: 0 auto; /* 设置左右外边距为 auto，实现水平居中 */
+      display: block; /* 使其成为块级元素，占满父容器宽度 */
+    }
+</style>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 
 </head>
@@ -129,7 +138,13 @@
 							</b>
 						</p>
                         <p style="font-size:16px;">
-							In the challenge, we utilize three evaluation metrics for assessment: Root Mean Square Error (RMSE), Structural Similarity (SSIM), and Learned Perceptual Image Patch Similarity (LPIPS).
+							In the challenge, we utilize three evaluation metrics for assessment: Root Mean Square Error (RMSE), Structural Similarity (SSIM), and Peak signal-to-noise ratio (PSNR).
+						</p>
+						<p>
+							\(Score=\log_k(SSIM*k^{PSNR})-RMSE=PSNR+\log_k(SSIM)-RMSE\)
+						</p>
+						<p style="font-size:16px;font-variant-numeric: lining-nums;">
+							In our implementation, k=1.2.
 						</p>
                         <p style="font-size:16px;">
 						</p>
