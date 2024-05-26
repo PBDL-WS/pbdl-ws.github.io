@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Leaderboard</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Conference project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">s
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/speakers.css">
+	<link rel="stylesheet" type="text/css" href="styles/speakers_responsive.css">
+    <style>
+        .table th {
+            background-color: #f0f0f0; /* Lighter background */
+            color: black; /* Black text */
+        }
+        .table tbody tr:nth-child(odd) {
+            background-color: white; /* White background for odd rows */
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: white; /* White background for even rows */
+        }
+        .table tbody tr td {
+            background-color: white; /* White background for table cells */
+        }
+    </style>
+</head>
+
+<body>
+	<div class="super_container">
+		<!-- Menu -->
+		<div class="menu trans_500">
+			<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+				<div class="menu_close_container">
+					<div class="menu_close"></div>
+				</div>
+				<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+				<ul>
+					<li class="menu_item"><a href="preview_index.html">Home</a></li>
+					<li class="menu_item"><a href="organizers">Organizers</a></li>
+					<li class="menu_item"><a href="speakers">Speakers</a></li>
+					<li class="menu_item"><a href="callforpapers">Call for papers</a></li>
+					<li class="menu_item"><a href="./challenge/index.html">Challenges</a></li>
+					<li class="menu_item"><a href="program.html">Program</a></li>
+                    <li class="menu_item"><a href="leaderboard.html">Leaderboard</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Home -->
+		<div class="home">
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/background.jpg" data-speed="0.8"></div>
+
+			<!-- Header -->
+			<header class="header" id="header">
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul>
+													<li><a href="preview_index.html">Home</a></li>
+													<li><a href="organizers.html">Organizers</a></li>
+													<li><a href="speakers.html">Speakers</a></li>
+													<li><a href="callforpapers.html">Call for papers</a></li>
+													<li><a href="./challenge/index.html">Challenges</a></li>
+													<li><a href="program.html">Program</a></li>
+                                                    <li class="active"><a href="leaderboard.html">Leaderboard</a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="home_content_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="home_content">
+								<div class="home_date">The 4th International Workshop on</div>
+								<div class="home_title">
+									<font color="red">P</font>hysics <font color="red">B</font>ased Vision meets <font color="red">D</font>eep <font color="red">L</font>earning (PBDL)
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div id="site_content">
+            <div class="sidebar">
+                <!-- Year Selection -->
+                <p style="color:black;font-size:24px;"><b>Select Year:</b></p>
+                <select id="year" name="year" onchange="updateLeaderboard()" style="font-size: 20px; width: 10%;"> <!-- Increase width -->
+					<option value="2024">2024</option>
+				</select>
+            </div>
+
+			<div id="content">
+
+				<!-- Challenge Information -->
+				<p style="color:black;font-size:24px;"><b>Track 1: Highspeed HDR Video Reconstruction from Events</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>PSNR</th>
+							<th>SSIM</th>
+							<th>RMSE</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>IVISLAB</td>
+							<td>16.56(1)</td>
+							<td>18.52(1)</td>
+							<td>0.73(1)</td>
+							<td>0.13(1)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jackzou</td>
+							<td>16.21(2)</td>
+							<td>18.50(2)</td>
+							<td>0.70(2)</td>
+							<td>0.13(2)</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>apolloUI</td>
+							<td>16.21(3)</td>
+							<td>18.39(3)</td>
+							<td>0.70(3)</td>
+							<td>0.13(3)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+								<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IVISLAB</td>
+							<td>Qinglin Liu[1],Wei Yu[1], Xiaoqian Lv[1], Jianing Li[2], Shengping Zhang[1], Xiangyang Ji[3]</td>
+							<td>[1] Harbin Institute of Technology.
+                                [2] Peking University.
+                                [3] Tsinghua University.</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Jackzou</td>
+							<td>Yunhao Zou</td>
+							<td>Beijing Institute of Technology</td>
+							<td></td>
+						</tr>
+                        <tr>
+							<td>apolloUI</td>
+							<td>Yuanpei Chen, Yuhan Zhang, Weihang Peng</td>
+							<td>Intelligent Science & Technology Academy of CASIC</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 2 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 2: HDR Reconstruction from a Single Raw Image</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>PSNR</th>
+							<th>SSIM</th>
+                            <th>PSNR-μ</th>
+                            <th>MS-SSIM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Alanosu</td>
+							<td>66.90 (1)</td>
+							<td>34.02 (1)</td>
+							<td>0.94 (3)</td>
+                            <td>33.43 (2)</td>
+                            <td>0.97 (2)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>USTCX</td>
+							<td>65.82 (2)</td>
+							<td>32.33 (2)</td>
+							<td>0.95 (1)</td>
+                            <td>33.89 (1)</td>
+                            <td>0.98 (1)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+								<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Alanosu</td>
+							<td>Liwen Zhang, Zhe Xu, Dingyong Gou, Cong Li</td>
+							<td>ZTE Corporation</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>USTCX</td>
+							<td>Senyan Xu, Yunkang Zhang, Siyuan Jiang</td>
+							<td>University of Science and Technology of China</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 3 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 3: Low-light Object Detection and Instance Segmentation</b></p>
+				
+                <p style="color:black;font-size:20px;"><b>Detection</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+                <!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+                        <tr>
+							<th>Ranking</th>
+                            <th>Team name</th>
+                            <th>AP</th>
+                            <th>AP50</th>
+                            <th>AP75</th>
+                            <th>AP small</th>
+                            <th>AP medium</th>
+                            <th>AP large</th>
+                            <th>AR max=1</th>
+                            <th>AR max=10</th>
+                            <th>AR max=100</th>
+                            <th>AR small</th>
+                            <th>AR medium</th>
+                            <th>AR large</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+							<td>1</td>
+                            <td>GroundTruth</td>
+                            <td>0.76 (1)</td>
+                            <td>0.89 (2)</td>
+                            <td>0.81 (2)</td>
+                            <td>0.11 (2)</td>
+                            <td>0.52 (2)</td>
+                            <td>0.83 (1)</td>
+                            <td>0.34 (1)</td>
+                            <td>0.78 (1)</td>
+                            <td>0.85 (2)</td>
+                            <td>0.20 (1)</td>
+                            <td>0.72 (2)</td>
+                            <td>0.91 (2)</td>
+                        </tr>
+                        <tr>
+							<td>1</td>
+                            <td>Xocean</td>
+                            <td>0.76 (1)</td>
+                            <td>0.89 (2)</td>
+                            <td>0.81 (2)</td>
+                            <td>0.12 (1)</td>
+                            <td>0.51 (3)</td>
+                            <td>0.83 (1)</td>
+                            <td>0.34 (1)</td>
+                            <td>0.78 (4)</td>
+                            <td>0.84 (4)</td>
+                            <td>0.17 (7)</td>
+                            <td>0.71 (3)</td>
+                            <td>0.90 (4)</td>
+                        </tr>
+                        <!-- <tr>
+							<td>3</td>
+                            <td>NJUST_KMG</td>
+                            <td>0.75(2)</td>
+                            <td>0.87(5)</td>
+                            <td>0.80(4)</td>
+                            <td>0.10(5)</td>
+                            <td>0.49(5)</td>
+                            <td>0.83(1)</td>
+                            <td>0.34(1)</td>
+                            <td>0.78(1)</td>
+                            <td>0.86(1)</td>
+                            <td>0.18(3)</td>
+                            <td>0.73(1)</td>
+                            <td>0.91(1)</td>
+                        </tr> -->
+						<tr>
+							<td>3</td>
+                            <td>UnoWhoiam</td>
+                            <td>0.75 (2)</td>
+                            <td>0.94 (1)</td>
+                            <td>0.86 (1)</td>
+                            <td>0.02 (13)</td>
+                            <td>0.59 (1)</td>
+                            <td>0.82 (5)</td>
+                            <td>0.34 (1)</td>
+                            <td>0.75 (5)</td>
+                            <td>0.79 (11)</td>
+                            <td>0.02 (14)</td>
+                            <td>0.66 (10)</td>
+                            <td>0.85 (11)</td>
+                        </tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>GroundTruth</td>
+							<td>Xiaoqiang Lu, Licheng Jiao (Fellow, IEEE), Fang Liu, Xu Liu, Lingling Li, Wenping Ma, Shuyuan Yang</td>
+							<td>Xidian University</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Xocean</td>
+							<td>Haiyang Xie[1], Shihuang Huang[2], Xi Shen[2], Peng Chen[3], Zheng Wang[1], Jian Zhao[4], Shuai An[5], Caizhi Zhu[2], Xuelong Li[4]</td>
+							<td>[1]Wuhan University,
+                                [2] Intellindust,
+                                [3] Beijing Forestry University,
+                                [4] Institute of AI, China Telecom, Beijing, P.R. China,
+                                [5] Harbin Institute of Technologs</td>
+							<td></td>
+						</tr>
+                        <tr>
+                            <td>NJUST_KMG</td>
+							<td>Li Pengpeng, Gu Haowei</td>
+							<td>Nanjing University of Science and Technology</td>
+							<td></td>
+                        </tr>
+                        </tbody>
+					</tbody>
+				</table>
+
+                <p style="color:black;font-size:20px;"><b>Segmentation</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+                <!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+                        <tr>
+							<th>Ranking</th>
+                            <th>Team name</th>
+                            <th>AP</th>
+                            <th>AP50</th>
+                            <th>AP75</th>
+                            <th>AP small</th>
+                            <th>AP medium</th>
+                            <th>AP large</th>
+                            <th>AR max=1</th>
+                            <th>AR max=10</th>
+                            <th>AR max=100</th>
+                            <th>AR small</th>
+                            <th>AR medium</th>
+                            <th>AR large</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+							<td>1</td>
+                            <td>GroundTruth</td>
+                            <td>0.62 (1)</td>
+                            <td>0.82 (3)</td>
+                            <td>0.65 (1)</td>
+                            <td>0.12 (1)</td>
+                            <td>0.42 (3)</td>
+                            <td>0.69 (1)</td>
+                            <td>0.30 (1)</td>
+                            <td>0.66 (1)</td>
+                            <td>0.70 (2)</td>
+                            <td>0.17 (2)</td>
+                            <td>0.57 (2)</td>
+                            <td>0.76 (1)</td>
+                        </tr>
+                        <tr>
+							<td>2</td>
+                            <td>UnoWhoiam</td>
+                            <td>0.59 (3)</td>
+                            <td>0.87 (1)</td>
+                            <td>0.61 (3)</td>
+                            <td>0.03 (11)</td>
+                            <td>0.47 (1)</td>
+                            <td>0.65 (3)</td>
+                            <td>0.28 (2)</td>
+                            <td>0.62 (3)</td>
+                            <td>0.65 (4)</td>
+                            <td>0.04 (12)</td>
+                            <td>0.54 (3)</td>
+                            <td>0.71 (4)</td>
+                        </tr>
+                        <tr>
+							<td>3</td>
+                            <td>Xocean</td>
+                            <td>0.58 (4)</td>
+                            <td>0.79 (4)</td>
+                            <td>0.61 (4)</td>
+                            <td>0.07 (4)</td>
+                            <td>0.35 (4)</td>
+                            <td>0.65 (4)</td>
+                            <td>0.28 (2)</td>
+                            <td>0.61 (4)</td>
+                            <td>0.66 (3)</td>
+                            <td>0.12 (4)</td>
+                            <td>0.48 (4)</td>
+                            <td>0.72 (3)</td>
+                        </tr>
+                    </tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>GroundTruth</td>
+							<td>Xiaoqiang Lu, Licheng Jiao (Fellow, IEEE), Fang Liu, Xu Liu, Lingling Li, Wenping Ma, Shuyuan Yang</td>
+							<td>Xidian University</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>UnoWhoiam</td>
+							<td>Linwei Chen</td>
+							<td>Beijing Institute of Technology</td>
+							<td></td>
+						</tr>
+                        <tr>
+                            <td>Xocean</td>
+							<td>Haiyang Xie[1], Shihuang Huang[2], Xi Shen[2], Peng Chen[3], Zheng Wang[1], Jian Zhao[4], Shuai An[5], Caizhi Zhu[2], Xuelong Li[4]</td>
+							<td>[1]Wuhan University,
+                                [2] Intellindust,
+                                [3] Beijing Forestry University,
+                                [4] Institute of AI, China Telecom, Beijing, P.R. China,
+                                [5] Harbin Institute of Technolog</td>
+							<td></td>
+                        </tr>
+                        </tbody>
+					</tbody>
+				</table>
+
+                <!-- Track 4 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 4: Extremely Low-light Image Denoising</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>PSNR</th>
+							<th>SSIM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>jly724215288</td>
+							<td>43.80 (1)</td>
+							<td>43.89 (1)</td>
+							<td>0.99 (1)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>yuxiaoxi</td>
+							<td>43.07 (2)</td>
+							<td>43.15 (2)</td>
+							<td>0.99 (1)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>jly724215288</td>
+							<td>Linyan jiang, Bingyi song, Zhuoyu an, Haibo lei, Qing luo, Jie song</td>
+							<td>Tencent</td>
+							<td><a href="tech_report/ELD_JLY_document.pdf">PDF</a></td>
+						</tr>
+						<tr>
+							<td>yuxiaoxi</td>
+							<td>liu yuan, li qihang, zhang haoyuan, wang lingfeng</td>
+							<td>Sanechips Technology Co., LTD</td>
+							<td><a href="tech_report/Extreme_Low_Light_Image_Denoising_yuxiaoxi.pdf">PDF</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 5 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 5: Low-light Raw Image Enhancement</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>IoU</th>
+							<th>F1-score</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>lc</td>
+							<td>30.11 (1)</td>
+							<td>31.15 (1)</td>
+							<td>0.84 (1)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>ISS</td>
+							<td>25.95 (2)</td>
+							<td>27.09 (2)</td>
+							<td>0.82 (3)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>lc</td>
+							<td>Jun Cao, Cheng Li</td>
+							<td>Xiaomi inc., China</td>
+							<td><a href="tech_report/PBDL2024_low_light_raw_enhancement.pdf">PDF</a></td>
+						</tr>
+						<tr>
+							<td>ISS</td>
+							<td>Xinyu Liu, Jing Zhang, Kexin Zhang, Yuting Yang, Licheng Jiao, Shuyuan Yang</td>
+							<td>Intelligent Perception and Image Understanding Lab, Xidian University</td>
+							<td><a href="tech_report/Low Light Raw Image Enhancement-ISS for the Low Light Raw Image Enhancement.pdf">PDF</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 6 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 6: RAW Image Based Over-Exposure Correction</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>PSNR</th>
+							<th>SSIM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>gxj</td>
+							<td>21.58 (1)</td>
+							<td>21.85 (1)</td>
+							<td>0.95 (1)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>CVCV</td>
+							<td>20.56 (2)</td>
+							<td>20.90 (2)</td>
+							<td>0.94 (2)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>gxj</td>
+							<td>Xuejian Gou</td>
+							<td>Xidian University</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>CVCV</td>
+							<td>Shizhan Zhao</td>
+							<td>Xidian Universitys</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 7 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 7: Low-light SRGB Image Enhancement</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Ranking</th>
+							<th>Team name</th>
+							<th>Score</th>
+							<th>PSNR</th>
+							<th>SSIM</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>IMAGCX</td>
+							<td>21.61 (1)</td>
+							<td>22.70 (1)</td>
+							<td>0.82 (1)</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>chm</td>
+							<td>21.48 (2)</td>
+							<td>22.62 (3)</td>
+							<td>0.82 (1)</td>
+						</tr>
+                        <tr>
+							<td>3</td>
+							<td>WanFly</td>
+							<td>20.65 (4)</td>
+							<td>21.82 (4)</td>
+							<td>0.81 (3)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Team name</th>
+							<th>Team Members</th>
+							<th>Organization</th>
+							<th>Technical Report</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>IMAGCX</td>
+							<td>Xiang Chen, Hao Li, Jinshan Pan</td>
+							<td>Nanjing University of Science and Technology</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>chm</td>
+							<td>Chuanlong Xie[1], Hongming Chen[1], 
+                                Mingrui Li[2],
+                                Tianchen Deng[3], 
+                                Jingwei Huang[4], 
+                                Yufeng Li [1]</td>
+							<td>[1]Shenyang Aerospace University, [2]Dalian University of Technology, [3]Shanghai Jiao Tong University, [4]University of Electronic Science and Technology of China</td>
+							<td></td>
+						</tr>
+                        <tr>
+							<td>WanFly</td>
+							<td>Fei Wan, Bingxin Xu, Jian Cheng, Yuxiang Zou, Zhehong Liu</td>
+							<td>Beijing Union University, Beijing Key Laboratory of Information Service Engineering</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+                <!-- Track 8 Information -->
+                <p style="color:black;font-size:24px;"><b>Track 8: Low-light Raw Video Denoising with Realistic Motion</b></p>
+                <p style="color:black;font-size:18px;"><b>Leaderboard</b></p>
+				<!-- Leaderboard Table -->
+				<table class="table table-striped">
+					<thead>
+                        <tr>
+							<th>Ranking</th>
+                            <th>Team name</th>
+                            <th>Score</th>
+                            <th>PSNR</th>
+                            <th>SSIM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+							<td>1</td>
+                            <td>ZichunWang</td>
+                            <td>45.39 (1)</td>
+                            <td>45.47 (1)</td>
+                            <td>0.99 (1)</td>
+                        </tr>
+                        <tr>
+							<td>2</td>
+                            <td>wql</td>
+                            <td>38.82 (2)</td>
+                            <td>39.06 (2)</td>
+                            <td>0.96 (2)</td>
+                        </tr>
+                        <tr>
+							<td>3</td>
+                            <td>mmmmmm</td>
+                            <td>32.94 (3)</td>
+                            <td>33.64 (3)</td>
+                            <td>0.88 (3)</td>
+                        </tr>
+                    </tbody>
+				</table>
+
+				<!-- Team Information Table -->
+				<p style="color:black;font-size:18px;"><b>Team Information</b></p>
+				<table class="table table-striped">
+					<thead>
+                        <tr>
+                            <th>Team name</th>
+                            <th>Team Members</th>
+                            <th>Organization</th>
+                            <th>Technical Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ZichunWang</td>
+                            <td>ZichunWang, Ying Fu</td>
+                            <td>Beijing Institute of Technology</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>wql</td>
+                            <td>Qinliang Wang, Xuejian Gou, Yang Liu</td>
+                            <td>Xidian University</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>mmmmmm</td>
+                            <td>Xinyue Yu</td>
+                            <td>Xidian University</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+				</table>
+			</div>
+		</div>
+
+		<footer>
+			<p>If you have any questions, please feel free to contact us by sending an email to organizers <b style="color:blue">pbdl.ws@gmail.com</b> with the title 'PBDL2024 website Inquiry'.</p>
+		</footer>
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="styles/bootstrap4/popper.js"></script>
+		<script src="styles/bootstrap4/bootstrap.min.js"></script>
+		<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+		<script src="plugins/easing/easing.js"></script>
+		<script src="plugins/parallax-js-master/parallax.min.js"></script>
+		<script src="js/speakers.js"></script>
+		<script>
+			function updateLeaderboard() {
+				var year = document.getElementById("year").value;
+				// Add logic to update leaderboard based on selected year if needed
+			}
+		</script>
+	</div>
+</body>
+
+</html>
